@@ -17,8 +17,8 @@ return new class extends Migration
              $table->foreign('home_team_id')->references('id')->on('teams');
     $table->unsignedBigInteger('away_team_id');
     $table->foreign('away_team_id')->references('id')->on('teams');
-    $table->unsignedSmallInteger('home_score')->default(0);
-    $table->unsignedSmallInteger('away_score')->default(0);
+
+
     $table->dateTime('date_time');
             $table->timestamps();
         });
