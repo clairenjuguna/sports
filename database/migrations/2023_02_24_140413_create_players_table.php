@@ -13,13 +13,20 @@ return new class extends Migration
     {
         Schema::create('players', function (Blueprint $table) {
             $table->id();
+
             $table->string('first_name');
-            $table->string('last_name');
-            $table->string('email_address');
-            $table->unsignedBigInteger('team_id');
-            $table->foreign('team_id')->references('id')->on('teams');
-            $table->unsignedSmallInteger('number');
-            $table->string('position');
+            $table->string('second_name');
+            $table->string('contact');
+            $table->integer('age');
+            $table->string('course');
+            $table->string('gender');
+            $table->string('school_name');
+            $table->unsignedBigInteger('school_id');
+            $table->foreign('school_id')->references('id')->on('school');
+            $table->string('sport_name');
+            $table->unsignedBigInteger('sport_id');
+            $table->foreign('sport_id')->references('id')->on('sports');
+
             $table->timestamps();
         });
     }
